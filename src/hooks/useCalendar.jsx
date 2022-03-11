@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 const daysShortArr = [
-  'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'
+  'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'
 ];
 
 const monthNamesArr = [
-  'January', 'February', 'March', 'April',
-  'May', 'June', 'July', 'August',
-  'September', 'October', 'November', 'December'
+  'Janvier', 'Février', 'Mars', 'Avril',
+  'Mai', 'Juin', 'Juillet', 'Aout',
+  'Septembre', 'Octobre', 'Novembre', 'Decembre'
 ];
 
 const useCalendar = (daysShort = daysShortArr, monthNames = monthNamesArr) => {
@@ -75,6 +75,14 @@ const useCalendar = (daysShort = daysShortArr, monthNames = monthNamesArr) => {
     setSelectedDate(prevValue => new Date(prevValue.getFullYear(), prevValue.getMonth() + 1, 1));
   }
 
+  const getPrevYear = () => {
+    setSelectedDate(prevValue => new Date(prevValue.getFullYear() - 1, prevValue.getMonth(), 1));
+  }
+
+  const getNextYear = () => {
+    setSelectedDate(prevValue => new Date(prevValue.getFullYear() + 1, prevValue.getMonth(), 1));
+  }
+
   return {
     daysShort,
     monthNames,
@@ -82,7 +90,9 @@ const useCalendar = (daysShort = daysShortArr, monthNames = monthNamesArr) => {
     calendarRows,
     selectedDate,
     getPrevMonth,
-    getNextMonth
+    getNextMonth,
+    getPrevYear,
+    getNextYear
   }
 }
 
