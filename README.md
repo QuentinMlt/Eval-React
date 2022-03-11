@@ -1,5 +1,6 @@
-# react-calendar-with-custom-hook
+Calendrier React
 
-[Live Preview](https://apps.damirpristav.com/react-calendar)
+Choix mois & année
 
-[Blog Post](https://codingfromscratch.dev/reactjs-custom-hook-for-calendar/)
+Rendez-vous afficher directement sous son formulaire de création
+
